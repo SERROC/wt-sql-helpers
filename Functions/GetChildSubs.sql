@@ -1,3 +1,6 @@
+/*
+  Get children for subdivision
+*/
 CREATE FUNCTION [GetChildSubs](@subdivision_id BIGINT) RETURNS @result TABLE (
   [id] BIGINT, 
   [parent_object_id] BIGINT, 

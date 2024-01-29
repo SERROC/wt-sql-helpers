@@ -18,7 +18,7 @@ BEGIN
       ') AS qnames'
     );
 
-  EXEC sp_executesql @tsql, N '@pivotedColumns nvarchar(max) out', @pivotedColumns out 
+  EXEC sp_executesql @tsql, N'@pivotedColumns nvarchar(max) out', @pivotedColumns out 
 
   SET @tsql = CONCAT (
       'SELECT ', @leadCols, ',', @pivotedColumns, 
@@ -55,6 +55,6 @@ BEGIN
         )
     );
 
-  EXEC sp_executesql @insertSql, N '@tsql NVARCHAR(MAX)', @tsql = @tsql;
+  EXEC sp_executesql @insertSql, N'@tsql NVARCHAR(MAX)', @tsql = @tsql;
 
 END;
